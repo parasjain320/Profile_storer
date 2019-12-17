@@ -1,0 +1,23 @@
+{% extends "company/base.html" %}
+{% load crispy_forms_tags %}
+{% block content  %}
+  <form action="{% url 'company-edit' details.id %}"  method="post" >
+    {% csrf_token %}
+    <h2>name -{{ details.name }}</h2>
+    <h2>Phone -{{ details.phone }}</h2>
+    <h2>gender -{{ details.gender }}</h2>
+    <h2>hobbies -{{ details.hobbies }}</h2>
+    <h2>profile_picture -{{ details.profile_picture }}</h2>
+
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Edit Profile</button>
+    </div>
+
+  </form>
+
+
+
+
+
+
+{% endblock  %}

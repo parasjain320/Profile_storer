@@ -1,0 +1,13 @@
+{% extends "company/base.html" %}
+{% load crispy_forms_tags %}
+{% block content  %}
+
+<h1>Here is detail of {{name}}</h1>
+
+{{  instance.name  }}<br>
+{{  instance.phone  }}<br>
+{{  instance.gender  }}<br>
+{{  instance.hobbies  }}<br>
+
+
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "company/base.html" %}
+{% block content  %}
+  {% csrf_token %}
+  <h1> welcome to {{ title }}</h1>
+{% endblock %}

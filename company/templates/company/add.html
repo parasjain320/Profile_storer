@@ -1,0 +1,64 @@
+{% extends "company/base.html" %}
+{% load crispy_forms_tags %}
+{% block content  %}
+  <form method="POST">
+    {% csrf_token %}
+
+        <div class="container">
+
+        <form class="well form-horizontal" action=" " method="POST"  id="contact_form">
+          {% csrf_token %}
+          <a href="{% url 'company-list' %}">List of total memebers in the company</a>
+    <fieldset>
+      <!-- {% for user in total %}
+      <li>{{ user }}</li>
+      <li>{{ user.street_address }}</li>
+  {% endfor %} -->
+
+    <!-- Form Name -->
+    <legend><center><h2><b>Add Member Here</b></h2></center></legend><br>
+
+    <!-- Text input-->
+
+    <div class="form-group">
+      <label class="col-md-4 control-label"> Name</label>
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input  name="name" placeholder="name" class="form-control"  type="text">
+        </div>
+      </div>
+    </div>
+
+    <!-- Text input-->
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" >Email</label>
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input name="email" placeholder="email" class="form-control"  type="text">
+        </div>
+      </div>
+    </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Type</label>
+            <div class="col-md-4 selectContainer">
+            <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+        <select class="form-control" id="make" name='type'>
+            <option value=""  name='type' >Select your Type</option>
+            <option>Normal</option>
+            <option>Manager</option>
+        </select>
+          </div>
+      </div>
+    </div>
+
+
+      <div class="form-group">
+          <button class="btn btn-outline-info" type="submit">Add Member</button>
+      </div>
+
+{% endblock %}

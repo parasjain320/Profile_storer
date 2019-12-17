@@ -1,0 +1,16 @@
+{% extends "company/base.html" %}
+{% load crispy_forms_tags %}
+{% block content  %}
+
+<h1>{{title }} is here of members</h1>
+{% for obj  in object_list %}
+
+<a href="{{ obj.get_absolute_url }}">{{ obj.id }}</a><br>
+{{  obj.name  }}<br>
+{{  obj.phone  }}<br>
+{{  obj.gender  }}<br>
+{{  obj.hobbies  }}<br>
+{{  obj.email  }}<br>
+{% endfor %}
+
+{% endblock %}
